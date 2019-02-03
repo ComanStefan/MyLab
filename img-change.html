@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Document</title>
+</head>
+<body>
+<style>
+    #slide {
+    width: 547px;
+    height: 705px;
+    border: 3px solid black;
+    position: relative;
+    overflow: hidden;
+}
+#one, #two {
+    width: 547px;
+    height: 705px;
+    position: absolute;
+    left: 0;
+    top: 0;
+    overflow: hidden;
+}
+#one {
+    background: red;
+}
+#two {
+    background: green;
+}
+    </style>
+    <div id="slide">
+        <div id="one"> 
+        <img src="https://i.ibb.co/60NbsSM/black3.jpg">
+        </div>
+        <div id="two">
+            <img src="https://i.ibb.co/HBSphmJ/black4.jpg">
+        </div>
+    </div>
+<script defer>
+    document.getElementById('slide').onmousemove = function (event) {
+    var x = event.offsetX;
+    console.log(x);
+    document.getElementById('two').style.width = x + 'px';
+}
+
+    document.getElementById('slide').onmouseleave = function(event) {
+    document.getElementById('two').style.width = '547px';
+}
+    </script>
+</body>
+</html>
